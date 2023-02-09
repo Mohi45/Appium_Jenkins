@@ -3,13 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="AutomationTestingByM.Appium.AppiumBasics">
+      <class name="AutomationTestingByM.Appium.Ecommerce_TC">
         <methods>
-          <include name="wifiSettingsName"/>
+          <include name="FillForm"/>
           <include name="tearDown"/>
           <include name="configureAppium"/>
+          <include name="AddToCart"/>
         </methods>
-      </class> <!-- AutomationTestingByM.Appium.AppiumBasics -->
+      </class> <!-- AutomationTestingByM.Appium.Ecommerce_TC -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

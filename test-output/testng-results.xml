@@ -1,69 +1,96 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
+<testng-results ignored="0" total="2" passed="1" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-02-07T20:21:54 IST" name="Default suite" finished-at="2023-02-07T20:22:17 IST" duration-ms="23008">
+  <suite started-at="2023-02-09T14:41:52 IST" name="Default suite" finished-at="2023-02-09T14:42:27 IST" duration-ms="35044">
     <groups>
     </groups>
-    <test started-at="2023-02-07T20:21:54 IST" name="Default test" finished-at="2023-02-07T20:22:17 IST" duration-ms="23008">
-      <class name="AutomationTestingByM.Appium.AppiumBasics">
-        <test-method is-config="true" signature="configureAppium()[pri:0, instance:AutomationTestingByM.Appium.AppiumBasics@6340e5f0]" started-at="2023-02-07T20:21:54 IST" name="configureAppium" finished-at="2023-02-07T20:22:10 IST" duration-ms="15822" status="PASS">
+    <test started-at="2023-02-09T14:41:52 IST" name="Default test" finished-at="2023-02-09T14:42:27 IST" duration-ms="35044">
+      <class name="AutomationTestingByM.Appium.Ecommerce_TC">
+        <test-method is-config="true" signature="configureAppium()[pri:0, instance:AutomationTestingByM.Appium.Ecommerce_TC@4efac082]" started-at="2023-02-09T14:41:52 IST" name="configureAppium" finished-at="2023-02-09T14:42:03 IST" duration-ms="10925" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- configureAppium -->
-        <test-method signature="wifiSettingsName()[pri:0, instance:AutomationTestingByM.Appium.AppiumBasics@6340e5f0]" started-at="2023-02-07T20:22:10 IST" name="wifiSettingsName" finished-at="2023-02-07T20:22:16 IST" duration-ms="6236" status="FAIL">
-          <exception class="java.lang.AssertionError">
+        <test-method signature="FillForm()[pri:0, instance:AutomationTestingByM.Appium.Ecommerce_TC@4efac082]" started-at="2023-02-09T14:42:03 IST" name="FillForm" finished-at="2023-02-09T14:42:13 IST" duration-ms="10475" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- FillForm -->
+        <test-method signature="AddToCart()[pri:0, instance:AutomationTestingByM.Appium.Ecommerce_TC@4efac082]" started-at="2023-02-09T14:42:13 IST" name="AddToCart" finished-at="2023-02-09T14:42:25 IST" depends-on-methods="AutomationTestingByM.Appium.Ecommerce_TC.FillForm" duration-ms="11708" status="FAIL">
+          <exception class="org.openqa.selenium.StaleElementReferenceException">
             <message>
-              <![CDATA[expected [Wii settings] but found [WiFi settings]]]>
+              <![CDATA[androidx.test.uiautomator.StaleObjectException
+For documentation on this error, please visit: https://selenium.dev/exceptions/#stale_element_reference
+Build info: version: '4.8.0', revision: '267030adea'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.5'
+Driver info: io.appium.java_client.android.AndroidDriver
+Command: [8b1b3539-f1d6-42ed-bfc0-8cd25fb8fe74, getElementText {id=00000000-0000-041e-ffff-ffff00000077}]
+Capabilities {appium:app: C:\Users\Jyoti Singh\Deskto..., appium:appPackage: com.androidsample.generalstore, appium:automationName: UIAutomator2, appium:databaseEnabled: false, appium:desired: {app: C:\Users\Jyoti Singh\Deskto..., automationName: UIAutomator2, deviceName: Pixcel_6, platformName: android}, appium:deviceApiLevel: 30, appium:deviceManufacturer: unknown, appium:deviceModel: Android SDK built for x86, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:pixelRatio: 2.625, appium:platformVersion: 11, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2002, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Element: [[AndroidDriver:  on ANDROID (8b1b3539-f1d6-42ed-bfc0-8cd25fb8fe74)] -> id: com.androidsample.generalstore:id/productName]
+Session ID: 8b1b3539-f1d6-42ed-bfc0-8cd25fb8fe74]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [Wii settings] but found [WiFi settings]
-at org.testng.Assert.fail(Assert.java:110)
-at org.testng.Assert.failNotEquals(Assert.java:1577)
-at org.testng.Assert.assertEqualsImpl(Assert.java:149)
-at org.testng.Assert.assertEquals(Assert.java:131)
-at org.testng.Assert.assertEquals(Assert.java:655)
-at org.testng.Assert.assertEquals(Assert.java:665)
-at AutomationTestingByM.Appium.AppiumBasics.wifiSettingsName(AppiumBasics.java:20)
+              <![CDATA[org.openqa.selenium.StaleElementReferenceException: androidx.test.uiautomator.StaleObjectException
+For documentation on this error, please visit: https://selenium.dev/exceptions/#stale_element_reference
+Build info: version: '4.8.0', revision: '267030adea'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.5'
+Driver info: io.appium.java_client.android.AndroidDriver
+Command: [8b1b3539-f1d6-42ed-bfc0-8cd25fb8fe74, getElementText {id=00000000-0000-041e-ffff-ffff00000077}]
+Capabilities {appium:app: C:\Users\Jyoti Singh\Deskto..., appium:appPackage: com.androidsample.generalstore, appium:automationName: UIAutomator2, appium:databaseEnabled: false, appium:desired: {app: C:\Users\Jyoti Singh\Deskto..., automationName: UIAutomator2, deviceName: Pixcel_6, platformName: android}, appium:deviceApiLevel: 30, appium:deviceManufacturer: unknown, appium:deviceModel: Android SDK built for x86, appium:deviceName: emulator-5554, appium:deviceScreenDensity: 420, appium:deviceScreenSize: 1080x2400, appium:deviceUDID: emulator-5554, appium:javascriptEnabled: true, appium:locationContextEnabled: false, appium:networkConnectionEnabled: true, appium:pixelRatio: 2.625, appium:platformVersion: 11, appium:statBarHeight: 136, appium:takesScreenshot: true, appium:viewportRect: {height: 2002, left: 0, top: 136, width: 1080}, appium:warnings: {}, appium:webStorageEnabled: false, platformName: ANDROID}
+Element: [[AndroidDriver:  on ANDROID (8b1b3539-f1d6-42ed-bfc0-8cd25fb8fe74)] -> id: com.androidsample.generalstore:id/productName]
+Session ID: 8b1b3539-f1d6-42ed-bfc0-8cd25fb8fe74
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+at io.appium.java_client.remote.AppiumCommandExecutor.execute(AppiumCommandExecutor.java:262)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
+at org.openqa.selenium.remote.RemoteWebElement.getText(RemoteWebElement.java:207)
+at AutomationTestingByM.Appium.Ecommerce_TC.AddToCart(Ecommerce_TC.java:31)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
 at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:829)
-at org.testng.TestRunner.run(TestRunner.java:602)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
-at org.testng.SuiteRunner.run(SuiteRunner.java:330)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
-at org.testng.TestNG.runSuites(TestNG.java:1099)
-at org.testng.TestNG.run(TestNG.java:1067)
+at org.testng.TestRunner.privateRun(TestRunner.java:794)
+at org.testng.TestRunner.run(TestRunner.java:596)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:377)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)
+at org.testng.SuiteRunner.run(SuiteRunner.java:276)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1134)
+at org.testng.TestNG.runSuites(TestNG.java:1063)
+at org.testng.TestNG.run(TestNG.java:1031)
 at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+          </exception> <!-- org.openqa.selenium.StaleElementReferenceException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- wifiSettingsName -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:AutomationTestingByM.Appium.AppiumBasics@6340e5f0]" started-at="2023-02-07T20:22:16 IST" name="tearDown" finished-at="2023-02-07T20:22:17 IST" duration-ms="858" status="PASS">
+        </test-method> <!-- AddToCart -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:AutomationTestingByM.Appium.Ecommerce_TC@4efac082]" started-at="2023-02-09T14:42:25 IST" name="tearDown" finished-at="2023-02-09T14:42:27 IST" duration-ms="1832" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- AutomationTestingByM.Appium.AppiumBasics -->
+      </class> <!-- AutomationTestingByM.Appium.Ecommerce_TC -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

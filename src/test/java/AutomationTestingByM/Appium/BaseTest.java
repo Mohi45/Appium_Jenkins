@@ -1,38 +1,43 @@
 package AutomationTestingByM.Appium;
 
-import java.io.File;
-import java.net.MalformedURLException;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.net.URL;
+import java.time.Duration;
+import java.util.Properties;
 
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
+import AutomationTestingByM.Appium.utils.AppiumUtils;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.options.UiAutomator2Options;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
-import io.appium.java_client.service.local.AppiumServiceBuilder;
 
-public class BaseTest {
-	
+public class BaseTest extends AppiumUtils {
+
 	public AndroidDriver driver;
 	public AppiumDriverLocalService service;
-	
+
 	@BeforeClass
-	public void configureAppium() throws MalformedURLException {
-		 service = new AppiumServiceBuilder()
-				.withAppiumJS(new File(
-						"C:\\Users\\Jyoti Singh\\AppData\\Roaming\\npm\\node_modules\\appium\\build\\lib\\main.js"))
-				.withIPAddress("127.0.0.1").usingPort(4723).build();
-		service.start();
+	public void configureAppium() throws IOException {
+		Properties prop =new Properties();
+		FileInputStream fis = new FileInputStream(System.getProperty("user.dir")+"//src//main//java//resources//data.properties");
+		prop.load(fis);
+		String ipAddress=prop.getProperty("ipAddress");
+		int port = Integer.parseInt(prop.getProperty("port"));
+		
+		service = startService(ipAddress, port);
 
 		// this config things for appium
 		UiAutomator2Options options = new UiAutomator2Options();
 		options.setDeviceName("Pixcel_6");
-		options.setApp("C:\\Users\\Jyoti Singh\\Desktop\\Appium\\src\\test\\java\\resources\\ApiDemos-debug.apk");
-
-		driver = new AndroidDriver(new URL("http://127.0.0.1:4723"), options);
+		options.setApp("C:\\Users\\Jyoti Singh\\Desktop\\Appium\\src\\test\\java\\resources\\General-Store.apk");
+		
+		driver = new AndroidDriver(service.getUrl(), options);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 	}
-	
+
 	@AfterClass
 	public void tearDown() {
 		driver.quit();
